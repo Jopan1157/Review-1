@@ -120,14 +120,14 @@ func urutkanJumlah() {
 	}
 
 	var pilihan string
-	fmt.Print("Urutkan jumlah (asc/desc): ")
+	fmt.Print("Urutkan jumlah (ascending/descending): ")
 	fmt.Scanln(&pilihan)
 
 	n := len(data)
 	for i := 0; i < n-1; i++ {
 		for j := 0; j < n-i-1; j++ {
-			if (pilihan == "asc" && data[j].Jumlah > data[j+1].Jumlah) ||
-				(pilihan == "desc" && data[j].Jumlah < data[j+1].Jumlah) {
+			if (pilihan == "ascending" && data[j].Jumlah > data[j+1].Jumlah) ||
+				(pilihan == "descending" && data[j].Jumlah < data[j+1].Jumlah) {
 
 				temp := data[j]
 				data[j] = data[j+1]
@@ -147,14 +147,14 @@ func urutkanKategori() {
 	}
 
 	var pilihan string
-	fmt.Print("Urutkan kategori (asc/desc): ")
+	fmt.Print("Urutkan kategori (ascending/descending): ")
 	fmt.Scanln(&pilihan)
 
 	n := len(data)
 	for i := 0; i < n-1; i++ {
 		for j := 0; j < n-i-1; j++ {
-			if (pilihan == "asc" && data[j].Kategori > data[j+1].Kategori) ||
-				(pilihan == "desc" && data[j].Kategori < data[j+1].Kategori) {
+			if (pilihan == "ascending" && data[j].Kategori > data[j+1].Kategori) ||
+				(pilihan == "descending" && data[j].Kategori < data[j+1].Kategori) {
 
 				temp := data[j]
 				data[j] = data[j+1]
@@ -168,7 +168,7 @@ func urutkanKategori() {
 }
 
 func main() {
-	var pilih int
+	var pilihMenu int
 
 	fmt.Print("Masukkan total budget Anda: Rp")
 	fmt.Scanln(&totalBudget)
@@ -185,9 +185,9 @@ func main() {
 		fmt.Println("8. Urutkan Berdasarkan Kategori")
 		fmt.Println("9. Keluar")
 		fmt.Print("Pilih menu: ")
-		fmt.Scanln(&pilih)
+		fmt.Scanln(&pilihMenu)
 
-		switch pilih {
+		switch pilihMenu {
 		case 1:
 			tambahData()
 		case 2:
