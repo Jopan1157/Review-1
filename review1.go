@@ -70,7 +70,7 @@ func hapusData() {
 		data[j] = data[j+1]
 	}
 	data = data[:len(data)-1]
-	fmt.Println("🗑️ Data berhasil dihapus.")
+	fmt.Println("🗑 Data berhasil dihapus.")
 }
 
 func anggaran() {
@@ -84,7 +84,7 @@ func anggaran() {
 	if total <= totalBudget {
 		fmt.Printf("✅ Sisa Budget: Rp %.2f\n", totalBudget-total)
 	} else {
-		fmt.Printf("⚠️ Melebihi Budget: Rp %.2f\n", total-totalBudget)
+		fmt.Printf("⚠ Melebihi Budget: Rp %.2f\n", total-totalBudget)
 	}
 }
 
@@ -120,14 +120,14 @@ func urutkanJumlah() {
 	}
 
 	var pilihan string
-	fmt.Print("Urutkan jumlah (ascending/descending): ")
+	fmt.Print("Urutkan jumlah (terkecil/terbesar): ")
 	fmt.Scanln(&pilihan)
 
 	n := len(data)
 	for i := 0; i < n-1; i++ {
 		for j := 0; j < n-i-1; j++ {
-			if (pilihan == "ascending" && data[j].Jumlah > data[j+1].Jumlah) ||
-				(pilihan == "descending" && data[j].Jumlah < data[j+1].Jumlah) {
+			if (pilihan == "terkecil" && data[j].Jumlah > data[j+1].Jumlah) ||
+				(pilihan == "terbesar" && data[j].Jumlah < data[j+1].Jumlah) {
 
 				temp := data[j]
 				data[j] = data[j+1]
@@ -147,14 +147,14 @@ func urutkanKategori() {
 	}
 
 	var pilihan string
-	fmt.Print("Urutkan kategori (ascending/descending): ")
+	fmt.Print("Urutkan kategori (terkecil/terbesar): ")
 	fmt.Scanln(&pilihan)
 
 	n := len(data)
 	for i := 0; i < n-1; i++ {
 		for j := 0; j < n-i-1; j++ {
-			if (pilihan == "ascending" && data[j].Kategori > data[j+1].Kategori) ||
-				(pilihan == "descending" && data[j].Kategori < data[j+1].Kategori) {
+			if (pilihan == "terkecil" && data[j].Kategori > data[j+1].Kategori) ||
+				(pilihan == "terbesar" && data[j].Kategori < data[j+1].Kategori) {
 
 				temp := data[j]
 				data[j] = data[j+1]
