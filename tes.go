@@ -105,7 +105,7 @@ func cariDataSequential() {
 	for i := 0; i < len(data); i++ {
 		if strings.Contains(strings.ToLower(data[i].Kategori), cari) {
 			fmt.Println("✅ Ditemukan pada data nomor", i+1)
-			fmt.Printf("Kategori: %s | Jumlah: Rp %.2f\n", data[i].Kategori, data[i].Jumlah)
+			fmt.Println("Kategori:", data[i].Kategori, "Jumlah:", data[i].Jumlah)
 			ketemu = true
 		}
 	}
